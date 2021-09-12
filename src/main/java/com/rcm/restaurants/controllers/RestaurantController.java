@@ -30,6 +30,7 @@ public class RestaurantController {
 
     @GetMapping("/restaurants/{id}")
     public Restaurant getRestaurant(@PathVariable int id) {
+        String test = "";
         Optional<Restaurant> maybeRestaurant = restaurantRepository.findById(id);
         if (maybeRestaurant.isEmpty()) throw new ResourceNotFoundException("Restaurant not found: " + id);
         return maybeRestaurant.get();
